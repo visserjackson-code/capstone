@@ -12,6 +12,7 @@ function Landing() {
         </a>
         ? Check out the Nuzlocke zone for detailed run tracking.
       </p>
+      <div className="btn-container">
       <button class="button">
         <div class="button-outer">
           <div class="button-inner">
@@ -19,7 +20,6 @@ function Landing() {
           </div>
         </div>
       </button>
-      <span>OR</span>
       <button class="button">
         <div class="button-outer">
           <div class="button-inner">
@@ -27,6 +27,7 @@ function Landing() {
           </div>
         </div>
       </button>
+      </div>
       </div>
       </div>
     </>
