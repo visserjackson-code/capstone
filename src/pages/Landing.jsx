@@ -1,4 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 function Landing() {
+
+  const navigate = useNavigate();
+
   return (
     <>
     <div className="page-background">
@@ -13,17 +18,17 @@ function Landing() {
         ? Check out the Nuzlocke zone for detailed run tracking.
       </p>
       <div className="btn-container">
-      <button class="button">
+      <button onClick={() => navigate("/tracker")} class="button">
         <div class="button-outer">
           <div class="button-inner">
-            <span>Track teams</span>
+            <span>Start tracking your teams</span>
           </div>
         </div>
       </button>
-      <button class="button">
+      <button onClick={() => navigate("/nuzlocke")} class="button">
         <div class="button-outer">
           <div class="button-inner">
-            <span>Nuzlocke zone</span>
+            <span>Enter the Nuzlocke zone</span>
           </div>
         </div>
       </button>
