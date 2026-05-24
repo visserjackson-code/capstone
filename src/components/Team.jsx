@@ -1,11 +1,17 @@
 import Slot from "./Slot";
 
-function Team() {
+function Team({team, activeSlot, onSlotClick}) {
     return (
         <div className="team">
-            <Slot index={0} pokemon={null} isActive={false} onClick={() => console.log("Clicked 1")}></Slot>
-            <Slot index={1} pokemon={null} isActive={true} onClick={() => console.log("Clicked 2")}></Slot>
-            <Slot index={1} pokemon="mudkip" isActive={false} onClick={() => console.log("Clicked 3")}></Slot>
+            {team.map((pokemon, index) => (
+                <Slot
+                key={index}
+                index={index}
+                pokemon={pokemon}
+                isActive={activeSlot === index}
+                onClick={() => onSlotClick(index)}
+                />
+            ))}
         </div>
     )
 }
