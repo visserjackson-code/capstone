@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Pokemon from "../components/Pokemon";
+import Team from "../components/Team";
 
 function Tracker() {
 
@@ -21,7 +22,7 @@ function Tracker() {
 
             {search && <Pokemon name={search} />}
         </div>
-        
+        <Team/>
         </>
     )
 }
