@@ -1,0 +1,32 @@
+.slot {
+  border-radius: 50%;
+  border: 3px solid gray;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: "Roboto";
+  margin: 5px 10px;
+}
+
+.slot p {
+    margin: 0;
+    text-align: center;
+}
+
+.slot.empty {
+  border-color: gray;
+  background-color: #e0e0e0;
+}
+
+.slot.active {
+  border-color: #1a73e8;
+  background-color: #e8f0fe;
+}
+
+.slot.occupied {
+  border-color: gray;
+  background-color: white;
+}

@@ -1,4 +1,5 @@
 import Pokemon from "./Pokemon";
+import '../styles/Slot.css'
 
 function Slot({pokemon, isActive, onClick, index}) {
   return (
