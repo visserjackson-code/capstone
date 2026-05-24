@@ -21,14 +21,7 @@ function Tracker() {
 
             {search && <Pokemon name={search} />}
         </div>
-
-        <button class="button">
-        <div class="button-outer">
-          <div class="button-inner">
-            <span>Add to Team</span>
-          </div>
-        </div>
-      </button>
+        
         </>
     )
 }
