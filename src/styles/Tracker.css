@@ -7,6 +7,12 @@
     color:red;
 }
 
+.games-select {
+    margin: 10px;
+    border-radius: 10px;
+    font-family: "Roboto";
+}
+
 .search-button {
     margin: 10px;
     border-radius: 2em;
