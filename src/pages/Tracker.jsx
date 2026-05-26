@@ -5,36 +5,39 @@ import "../styles/Tracker.css";
 
 function Tracker() {
   const [input, setInput] = useState("");
-  const [team, setTeam] = useState(Array(6).fill(null));
+  const [teams, setTeams] = useState(
+    Object.fromEntries(GAMES.map((game) => [game.id, Array(6).fill(null)])),
+  );
   const [activeSlot, setActiveSlot] = useState(null);
   const [selectedGame, setSelectedGame] = useState(GAMES[0].id);
+
+  const currentTeam = teams[selectedGame];
 
   const handleSlotClick = (index) => {
     setActiveSlot(index);
   };
 
-  const isOccupied = activeSlot !== null && team[activeSlot] !== null;
+  const isOccupied = activeSlot !== null && currentTeam[activeSlot] !== null;
 
   const handleSearch = () => {
     //no slot selected
     if (activeSlot === null) return;
+    
+    const newTeam = [...currentTeam];
 
-    //occupied slot selected, remove pokemon
     if (isOccupied) {
-      const newTeam = [...team];
-      newTeam[activeSlot] = null;
-      setTeam(newTeam);
-      setActiveSlot(null);
+        newTeam[activeSlot] = null;
     }
-    //empty slot selected, add pokemon
+
     else if (input) {
-      const newTeam = [...team];
-      newTeam[activeSlot] = input.toLowerCase();
-      setTeam(newTeam);
-      setActiveSlot(null);
-      setInput("");
+        newTeam[activeSlot] = input.toLowerCase();
+        setInput("");
     }
-  };
+
+    setTeams({...teams, [selectedGame]: newTeam});
+    setActiveSlot(null);
+
+  }
 
   return (
     <>
@@ -65,7 +68,7 @@ function Tracker() {
           {isOccupied ? "Remove Pokémon" : "Add Pokémon"}
         </button>
       </div>
-      <Team team={team} activeSlot={activeSlot} onSlotClick={handleSlotClick} />
+      <Team team={currentTeam} activeSlot={activeSlot} onSlotClick={handleSlotClick} />
     </>
   );
 }
