@@ -30,3 +30,8 @@
   border-color: gray;
   background-color: white;
 }
+
+.slot.occupied.active {
+  border-color: salmon;
+  background-color: lightsalmon;
+}
