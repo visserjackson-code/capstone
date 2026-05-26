@@ -33,9 +33,14 @@
   border-color: gray;
   background-color: white;
   overflow: visible;
+  z-index: 1;
 }
 
 .slot.occupied.active {
   border-color: salmon;
   background-color: lightsalmon;
+}
+
+.slot.occupied:hover {
+  z-index: 200;
 }
