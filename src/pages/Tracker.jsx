@@ -11,8 +11,22 @@ function Tracker() {
         setActiveSlot(index);
     };
 
+    const isOccupied = activeSlot !== null && team[activeSlot] !== null;
+
     const handleSearch = () => {
-        if (input && activeSlot !== null) {
+
+        //no slot selected
+        if (activeSlot === null) return;
+
+        //occupied slot selected, remove pokemon
+        if(isOccupied) {
+            const newTeam = [...team];
+            newTeam[activeSlot] = null;
+            setTeam(newTeam);
+            setActiveSlot(null);
+        }
+        //empty slot selected, add pokemon
+        else if (input) {
             const newTeam = [...team];
             newTeam[activeSlot] = input.toLowerCase();
             setTeam(newTeam);
@@ -32,7 +46,9 @@ function Tracker() {
              onChange={(e) => setInput(e.target.value)}
              placeholder="Enter a Pokémon name" 
              />
-             <button className="search-button" onClick={handleSearch}>Add Pokémon</button>
+             <button className="search-button" onClick={handleSearch}>
+                {isOccupied ? "Remove Pokémon" : "Add Pokémon"}
+                </button>
         </div>
         <Team team={team} activeSlot={activeSlot} onSlotClick={handleSlotClick} />
         </>
