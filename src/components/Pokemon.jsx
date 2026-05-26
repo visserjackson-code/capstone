@@ -17,7 +17,7 @@ function Pokemon({name}) {
     <>
       <div className="pokemon-wrapper">
         <img src={pokemon.sprite} alt={name} />
-        <StatsOverlay name={name} types={pokemon.types} stats={pokemon.stats} />
+        <StatsOverlay name={name.toUpperCase()} types={pokemon.types} stats={pokemon.stats} />
       </div>
     </>
   );

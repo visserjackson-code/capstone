@@ -14,9 +14,12 @@ function StatsOverlay({name, types, stats}) {
     <div className="stats-overlay">
       <h3>{name}</h3>
       <div className="types">
-        {types.map((type) => (
-          <span key={type} className={`type-badge ${type}`}>
-            {type}
+        {types.map((type, index) => (
+          <span key={type}>
+            <span className={`type-badge ${type}`}>
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </span>
+            {index < types.length - 1 && " / "}
           </span>
         ))}
       </div>

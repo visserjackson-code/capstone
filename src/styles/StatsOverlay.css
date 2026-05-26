@@ -2,7 +2,7 @@
 .stats-overlay {
   position: absolute;
   top: 0;
-  left: 100%; /* appears to the right of the slot */
+  left: 100%; 
   z-index: 100;
   background: white;
   border: 2px solid gray;
@@ -10,4 +10,37 @@
   padding: 0.5rem;
   width: 200px;
   pointer-events: none; /* prevents flicker when mouse moves over overlay */
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 3px 0;
+}
+
+.stat-label {
+  width: 50px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.stat-bar-bg {
+  flex: 1;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.stat-value {
+  width: 25px;
+  font-size: 11px;
+  text-align: right;
 }
