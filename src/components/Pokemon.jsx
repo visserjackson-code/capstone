@@ -1,6 +1,7 @@
 import {getPokemon} from "../utils/pokeapi";
 import {useState, useEffect} from "react";
 import StatsOverlay from "./StatsOverlay";
+import "../styles/Pokemon.css"
 
 function Pokemon({name}) {
   const [pokemon, setPokemon] = useState(null);
