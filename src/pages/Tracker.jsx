@@ -41,6 +41,7 @@ function Tracker() {
 
   return (
     <>
+    <div className="page-no-background">
       <h1 className="tracker-header">Add a Pokémon</h1>
       <p className="tracker-desc">
         {" "}
@@ -69,6 +70,7 @@ function Tracker() {
         </button>
       </div>
       <Team team={currentTeam} activeSlot={activeSlot} onSlotClick={handleSlotClick} />
+      </div>
     </>
   );
 }

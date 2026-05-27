@@ -12,5 +12,10 @@ export const getPokemon = async (mon) => {
     };
 } ; 
 
+export const getSprite = async (mon) => {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${mon.toLowerCase()}`);
+  const data = await response.json();
+  return data.sprites.other.showdown.front_default ?? data.sprites.front_default;
+};
 
 
