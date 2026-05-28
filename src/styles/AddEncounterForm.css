@@ -1,0 +1,20 @@
+/* AddEncounterForm.css */
+.add-encounter-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.add-encounter-form input {
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  font-family: "Roboto";
+}
+
+.add-encounter-form button {
+  border-radius: 2em;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  font-family: "Roboto";
+}

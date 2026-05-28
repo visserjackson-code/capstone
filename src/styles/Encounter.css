@@ -21,7 +21,20 @@
   text-transform: capitalize;
 }
 
+.encounter-nickname {
+  font-weight: bold;
+  font-style: italic;
+  width: 80px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+
 .encounter.dead .encounter-pokemon {
+  text-decoration: line-through;
+}
+
+.encounter.dead .encounter-nickname {
   text-decoration: line-through;
 }
 

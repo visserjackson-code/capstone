@@ -3,7 +3,7 @@ import { getSprite } from "../utils/pokeapi";
 import "../styles/Encounter.css";
 
 function Encounter({encounter, onToggle, onDelete}) {
-    const {id, pokemon, location, alive} = encounter;
+    const {id, pokemon, nickname, location, alive} = encounter;
     const [sprite, setSprite] = useState(null);
 
     useEffect(() => {
@@ -14,6 +14,7 @@ function Encounter({encounter, onToggle, onDelete}) {
         <div className={`encounter ${alive ? "alive" : "dead"}`}>
             {sprite && <img src={sprite} alt={pokemon} className="encounter-sprite"/>}
             <span className="encounter-pokemon">{pokemon}</span>
+            <span className="encounter-nickname">{nickname}</span>
             <span className="encounter-location">{location}</span>
             <button className="toggle-button" onClick={() => onToggle(id)}>
                 {alive ? "Alive" : "Dead"}

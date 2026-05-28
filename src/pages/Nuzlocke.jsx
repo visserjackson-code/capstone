@@ -1,7 +1,9 @@
+import AddEncounterForm from "../components/AddEncounterForm";
 import Encounter from "../components/Encounter";
 
 function Nuzlocke() {
-  const testEncounter = { id: 1, pokemon: 'pidgey', location: 'Route 1', alive: true };
+  const testEncounter = { id: 1, pokemon: 'pidgey', nickname: "Pudgey", location: 'Route 1', alive: true };
+  
 
   return (
     <div>
@@ -10,6 +12,7 @@ function Nuzlocke() {
         onToggle={(id) => console.log('toggle', id)}
         onDelete={(id) => console.log('delete', id)}
       />
+      <AddEncounterForm/>
     </div>
   );
 }
