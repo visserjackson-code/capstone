@@ -40,7 +40,7 @@ function AddEncounterForm({onAdd}) {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             />
-            <button onClick={handleAdd}>Add Encounter</button>
+            <button className="add-encounter" onClick={handleAdd}>Add Encounter</button>
         </div>
     );
 }
