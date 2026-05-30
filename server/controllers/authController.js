@@ -1,6 +1,6 @@
-import bcrypt from "bcrypt.js";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../models/User";
+import User from "../models/User.js";
 
 // eslint-disable-next-line no-undef
 const JWT_SECRET = process.env.JWT_SECRET;

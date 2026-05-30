@@ -1,4 +1,4 @@
-import Encounter from "../models/Encounter";
+import Encounter from "../models/Encounter.js";
 
 export const getEncounters = async (req, res) => {
   try {
