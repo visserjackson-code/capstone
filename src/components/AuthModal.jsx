@@ -58,7 +58,7 @@ function AuthModal({onClose, onAuth}) {
         <p className="modal-switch">
           {isLogin ? "Don't have an account?" : "Already have an account?"}
           <span onClick={() => setIsLogin(!isLogin)}>
-            {isLogin ? "Register" : "Login"}
+            {isLogin ? " Register" : " Login"}
           </span>
         </p>
       </div>

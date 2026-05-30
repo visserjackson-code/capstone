@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
-function Layout() {
+function Layout({token, user, onAuth, onLogout}) {
   return (
     <>
-      <Navbar />
+      <Navbar token={token} user={user} onAuth={onAuth} onLogout={onLogout} />
       <main>
         <Outlet />
       </main>

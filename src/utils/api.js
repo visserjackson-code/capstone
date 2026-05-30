@@ -60,7 +60,7 @@ export const addEncounter = async (token, encounter) => {
 
 export const toggleEncounter = async (token, id) => {
   const res = await fetch(`${BASE_URL}/encounters/${id}/toggle`, {
-    method: "POST",
+    method: "PATCH",
     headers: headers(token)
   });
   return res.json();
