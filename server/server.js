@@ -17,10 +17,12 @@ app.use(express.json);
 // app.use("/api/teams", teamRoutes);
 // app.use("./api/encounters", encounterRoutes);
 
+// eslint-disable-next-line no-undef
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.error(err));
 
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 
