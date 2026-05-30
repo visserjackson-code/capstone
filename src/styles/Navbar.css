@@ -11,3 +11,32 @@
     color: red;
     font-weight: bold;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-user {
+  font-family: "Roboto";
+  font-size: 0.9rem;
+}
+
+.navbar-button {
+  border-radius: 2em;
+  font-family: "Roboto";
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+}

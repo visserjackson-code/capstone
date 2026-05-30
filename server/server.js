@@ -10,11 +10,7 @@ import encounterRoutes from "./routes/encounterRoutes.js"
 
 const app = express();
 
-app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(cors());
 
 app.use(express.json());
 
@@ -28,6 +24,6 @@ mongoose.connect(process.env.MONGO_URI)
 .catch(err => console.error(err));
 
 // eslint-disable-next-line no-undef
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 

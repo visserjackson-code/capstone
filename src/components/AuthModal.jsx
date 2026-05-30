@@ -23,7 +23,7 @@ function AuthModal({onClose, onAuth}) {
 
         const result = isLogin
         ? await loginUser(email, password)
-        : await registerUser(email.password);
+        : await registerUser(email, password);
 
 
         if (result.token) {
