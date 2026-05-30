@@ -42,7 +42,7 @@ function Tracker() {
   return (
     <>
     <div className="page-no-background">
-      <h1 className="tracker-header">Add a Pokémon</h1>
+      <h1 className="tracker-header">Track your teams</h1>
       <p className="tracker-desc">
         {" "}
         Click a team slot, then search for a Pokémon and click the add button.
