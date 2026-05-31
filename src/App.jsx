@@ -36,8 +36,8 @@ function App() {
             }
           >
             <Route index element={<Landing />} />
-            <Route path="tracker" element={<Tracker />} />
-            <Route path="nuzlocke" element={<Nuzlocke />} />
+            <Route path="tracker" element={<Tracker token={token} />} />
+            <Route path="nuzlocke" element={<Nuzlocke token={token} />} />
           </Route>
         </Routes>
       </BrowserRouter>
