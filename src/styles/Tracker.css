@@ -13,6 +13,12 @@
     font-family: "Roboto";
 }
 
+.pokemon-input {
+    margin: 10px;
+    border-radius: 10px;
+    font-family: "Roboto";
+}
+
 .search-button {
     margin: 10px;
     border-radius: 2em;
@@ -28,7 +34,7 @@
 .tracker-desc {
     font-size: 24px;
     font-family: "Roboto";
-    color: black;
+    color: blueviolet;
     font-weight: bold;
 }
 

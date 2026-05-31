@@ -7,6 +7,15 @@
     color:red;
 }
 
+.nuzlocke-desc {
+    text-align: center;
+    font-family: "Roboto";
+    color: blueviolet;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .nothing-yet {
     font-family: "Roboto";
+    color: blueviolet;
 }

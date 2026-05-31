@@ -36,8 +36,6 @@ function Tracker({token}) {
   };
 
   const handleSearch = () => {
-    console.log("handle search called", {activeSlot, input, token});
-    //no slot selected
     if (activeSlot === null) return;
 
     const newTeam = [...currentTeam];
@@ -79,6 +77,7 @@ function Tracker({token}) {
           </select>
           <input
             type="text"
+            className="pokemon-input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Enter a Pokémon name"
