@@ -51,6 +51,7 @@ function AuthModal({onClose, onAuth}) {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
         <button className="modal-submit" onClick={handleSubmit}>
           {isLogin ? "Login" : "Register"}

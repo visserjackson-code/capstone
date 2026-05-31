@@ -85,7 +85,7 @@ function Nuzlocke({ token }) {
   return (
     <div className="nuzlocke-page">
       <h1 className="nuzlocke-tracker">Nuzlocke Tracker</h1>
-      <p className="nuzlocke-desc">Track your Nuzlocke encounters below. Login to save your run!</p>
+      <p className="nuzlocke-desc">Track your Nuzlocke encounters below. Login to save your runs!</p>
       <select
         value={selectedGame}
         onChange={(e) => setSelectedGame(e.target.value)}
