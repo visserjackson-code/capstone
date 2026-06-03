@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import "../styles/Layout.css"
 
 function Layout({token, user, onAuth, onLogout}) {
   return (
@@ -8,6 +9,8 @@ function Layout({token, user, onAuth, onLogout}) {
       <main>
         <Outlet />
       </main>
+
+      <footer className="footer">2026 Pokémon Team Tracker</footer>
     </>
   );
 }
