@@ -4,18 +4,20 @@ import {GAMES} from "../utils/games";
 import {fetchTeams, saveTeam} from "../utils/api";
 import "../styles/Tracker.css";
 
+//page component for tracking teams across multiple games
 function Tracker({token}) {
   const [input, setInput] = useState("");
   const [teams, setTeams] = useState(
+    //each game has an independent array of 6 slots
     Object.fromEntries(GAMES.map((game) => [game.id, Array(6).fill(null)])),
   );
   const [activeSlot, setActiveSlot] = useState(null);
   const [selectedGame, setSelectedGame] = useState(GAMES[0].id);
 
+  //fetches user's saved teams from mongoDB upon login
   useEffect(() => {
   if (!token) return;
   fetchTeams(token).then((data) => {
-    console.log("fetched teams", data)
     if (!Array.isArray(data)) return;
     setTeams((prevTeams) => {
       const loaded = { ...prevTeams };
@@ -35,6 +37,7 @@ function Tracker({token}) {
     setActiveSlot(index);
   };
 
+  //handles adding or removing pokemon from the active slot
   const handleSearch = () => {
     if (activeSlot === null) return;
 
@@ -50,8 +53,9 @@ function Tracker({token}) {
     setTeams({...teams, [selectedGame]: newTeam});
     setActiveSlot(null);
 
+    //save to backend if logged in
     if(token) {
-      saveTeam(token, selectedGame, newTeam).then((res) => console.log("saved", res));
+      saveTeam(token, selectedGame, newTeam)
     }
   };
 
@@ -64,6 +68,7 @@ function Tracker({token}) {
           Click a team slot, then search for a Pokémon and click the add button. Login to save your teams!
         </p>
         <div>
+          {/* game selector - switching games shows team for that game */}
           <select
             value={selectedGame}
             onChange={(e) => setSelectedGame(e.target.value)}
@@ -75,6 +80,7 @@ function Tracker({token}) {
               </option>
             ))}
           </select>
+          {/* pokemon search input */}
           <input
             type="text"
             className="pokemon-input"
@@ -82,10 +88,12 @@ function Tracker({token}) {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Enter a Pokémon name"
           />
+          {/* label changes based on whether slot is occupied to add or remove pokemon */}
           <button className="search-button" onClick={handleSearch}>
             {isOccupied ? "Remove Pokémon" : "Add Pokémon"}
           </button>
         </div>
+        {/* renders team, passing down state and slot intreaction handlers */}
         <Team
           team={currentTeam}
           activeSlot={activeSlot}

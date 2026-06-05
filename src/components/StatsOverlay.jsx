@@ -1,5 +1,6 @@
 import "../styles/StatsOverlay.css";
 
+//color schemes for each stat, mapped from pokeapi
 const STAT_CONFIG = {
   hp: {label: "HP", color: "green"},
   attack: {label: "ATK", color: "red"},
@@ -9,6 +10,8 @@ const STAT_CONFIG = {
   speed: {label: "SPD", color: "green"},
 };
 
+//overlay showing pokemon name, type, and stats that appears on hover
+//visibilty is controlled by .pokemon-wrappper:hover .stats-overlay CSS
 function StatsOverlay({name, types, stats}) {
   return (
     <div className="stats-overlay">
@@ -19,6 +22,7 @@ function StatsOverlay({name, types, stats}) {
             <span className={`type-badge ${type}`}>
               {type.charAt(0).toUpperCase() + type.slice(1)}
             </span>
+            {/* slash is only rendered between types */}
             {index < types.length - 1 && " / "}
           </span>
         ))}
@@ -33,6 +37,7 @@ function StatsOverlay({name, types, stats}) {
                 <div
                   className="stat-bar-fill"
                   style={{
+                    //fill stat bars proportional to max base stat of 255
                     width: `${(value / 255) * 100}%`,
                     backgroundColor: config.color,
                   }}

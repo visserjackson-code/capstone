@@ -3,6 +3,7 @@ import { useState } from 'react';
 import AuthModal from './AuthModal';
 import '../styles/Navbar.css';
 
+//token and user come from App.jsx to determine whether logged in or logged out state is displayed
 function Navbar({ token, user, onAuth, onLogout }) {
   const [showModal, setShowModal] = useState(false);
 
@@ -10,6 +11,7 @@ function Navbar({ token, user, onAuth, onLogout }) {
     <>
       <nav className="navbar">
         <div className="navbar-links">
+          {/* isActive updates the active class to highlight the currently viewed page */}
           <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>
             HOME
           </NavLink>
@@ -20,6 +22,7 @@ function Navbar({ token, user, onAuth, onLogout }) {
             NUZLOCKES
           </NavLink>
         </div>
+        {/* shows email and lgout when logged in, login/register button when logged out */}
         <div className="navbar-auth">
           {token ? (
             <>
@@ -33,6 +36,7 @@ function Navbar({ token, user, onAuth, onLogout }) {
           )}
         </div>
       </nav>
+      {/* render the auth modal only when showModal is true. onAuth passes the token and email up to App.jsx on success */}
       {showModal && (
         <AuthModal
           onClose={() => setShowModal(false)}

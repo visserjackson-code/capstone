@@ -6,10 +6,10 @@ function AuthModal({onClose, onAuth}) {
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [error, setError] = useState(""); //error field to show up top
 
     const handleSubmit = async () => {
-        setError("");
+        setError(""); 
 
         if (!email || !password) {
             setError("Please fill in all fields.");
@@ -20,15 +20,16 @@ function AuthModal({onClose, onAuth}) {
             setError("Password must be at least 8 characters.");
             return;
         }
-
+        //default is "Login"
         const result = isLogin
         ? await loginUser(email, password)
         : await registerUser(email, password);
 
-
+        //logs in and closes form
         if (result.token) {
             onAuth(result.token, result.email);
             onClose();
+        //otherwise, something else happened. show error message
         } else {
             setError(result.message || "Something went wrong")
         }
@@ -51,7 +52,7 @@ function AuthModal({onClose, onAuth}) {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()} //allows for both enter key and clicking button to submit form
         />
         <button className="modal-submit" onClick={handleSubmit}>
           {isLogin ? "Login" : "Register"}
@@ -59,6 +60,7 @@ function AuthModal({onClose, onAuth}) {
         <p className="modal-switch">
           {isLogin ? "Don't have an account?" : "Already have an account?"}
           <span onClick={() => setIsLogin(!isLogin)}>
+            {/* flips back and forth between register and login */}
             {isLogin ? " Register" : " Login"}
           </span>
         </p>

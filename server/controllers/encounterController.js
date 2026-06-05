@@ -22,7 +22,7 @@ export const addEncounter = async (req, res) => {
       pokemon,
       nickname,
       location,
-      alive: true,
+      alive: true, //encounters start as alive by default
     });
     res.status(201).json(encounter);
   } catch (err) {
@@ -30,6 +30,7 @@ export const addEncounter = async (req, res) => {
   }
 };
 
+//changes an encounter from alive to dead and vice versa
 export const toggleEncounter = async (req, res) => {
   try {
     const encounter = await Encounter.findOne({

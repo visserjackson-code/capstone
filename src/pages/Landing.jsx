@@ -7,7 +7,8 @@ function Landing() {
   return (
     <>
     <div className="page-background">
-        <div className="glass-box">
+      {/* glass-box class allows for background to be opaque behind it */}
+        <div className="glass-box"> 
       <h1 className="landing-header">Pokémon Team Tracker</h1>
       <p className="landing-desc">
         Track your Pokémon teams across the mainline series games, from Red and

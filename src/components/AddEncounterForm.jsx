@@ -10,13 +10,14 @@ function AddEncounterForm({onAdd}) {
         if (!pokemon || !location) return;
 
         onAdd({
-            id: Date.now(),
+            id: Date.now(), //gives encounters unique ids
             pokemon: pokemon.toLowerCase(),
             location,
             nickname,
             alive: true
         });
         setPokemon("");
+        setNickname("");
         setLocation("");
     }
 

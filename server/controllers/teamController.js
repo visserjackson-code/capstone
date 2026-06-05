@@ -16,7 +16,7 @@ export const saveTeam = async (req, res) => {
     const team = await Team.findOneAndUpdate(
       {userId: req.userId, game},
       {slots},
-      {upsert: true, new: true},
+      {upsert: true, new: true}, //upsert to account for new teams being created
     );
 
     res.status(200).json(team);
