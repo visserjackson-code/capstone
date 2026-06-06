@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "jest": {
+    "transform": {},
+    "extensionsToTreatAsEsm": [".js"],
+    "testEnviornment": "node"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +25,10 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.6.3",
     "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "mongodb-memory-server": "^11.2.0",
+    "supertest": "^7.2.2"
   }
 }
