@@ -10,8 +10,7 @@
   },
   "jest": {
     "transform": {},
-    "extensionsToTreatAsEsm": [".js"],
-    "testEnviornment": "node"
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
